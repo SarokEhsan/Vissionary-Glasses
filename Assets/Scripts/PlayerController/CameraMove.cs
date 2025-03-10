@@ -38,10 +38,6 @@ public class CameraMove : MonoBehaviour
     {
         mouseHor = Input.GetAxis("Mouse X");
         mouseVer = Input.GetAxis("Mouse Y");
-        if (Input.mousePosition.y > 600)
-        {
-            mouseVer = mouseVer / 6;
-        }
         transform.Rotate(Vector3.up * mouseHor * rotationSpeed * Time.deltaTime, Space.World);
         transform.Rotate(Vector3.left * mouseVer * rotationSpeed * Time.deltaTime, Space.Self);
     }

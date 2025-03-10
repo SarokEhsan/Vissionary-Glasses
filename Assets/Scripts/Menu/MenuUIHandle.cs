@@ -15,6 +15,7 @@ public class MenuUIHandle : MonoBehaviour
     public GameObject canvas;
     public GameObject mainCamera;
     bool isSceneOnLoad = false;
+
     private void FixedUpdate()
     {
         if (isSceneOnLoad)
@@ -22,6 +23,7 @@ public class MenuUIHandle : MonoBehaviour
             mainCamera.transform.Translate(0, 0, 1 * Time.deltaTime);
         }
     }
+
     public void LoadLevel()
     {
         isSceneOnLoad = true;

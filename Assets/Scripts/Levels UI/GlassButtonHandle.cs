@@ -8,54 +8,66 @@ public class GlassButtonHandle : MonoBehaviour
     public GameObject blueGlasses;
     public GameObject greenGlasses;
     public GameObject redGlasses;
-    public GameObject[] activeTexts = new GameObject[3];
     public bool isBlueGActive = false, isGreenGActive = false, isRedGActive = false;
 
     private void Awake()
     {
         instance = this;
     }
-    public void BlueButtonFunc()
+
+    private void Update()
+    {
+        if (!PauseResume.instance.isGamePaused)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                BlueGlassesFunc();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                GreenGlassesFunc();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                RedGlassesFunc();
+            }
+        }
+    }
+    public void BlueGlassesFunc()
     {
         if (!isBlueGActive)
         {
-            activeTexts[0].SetActive(true);
             blueGlasses.SetActive(true);
             isBlueGActive = true;
         }
         else if (isBlueGActive)
         {
-            activeTexts[0].SetActive(false);
             blueGlasses.SetActive(false);
             isBlueGActive = false;
         }
     }
-    public void GreenButtonFunc()
+    public void GreenGlassesFunc()
     {
         if (!isGreenGActive)
         {
-            activeTexts[1].SetActive(true);
             greenGlasses.SetActive(true);
             isGreenGActive = true;
         }
         else if (isGreenGActive)
         {
-            activeTexts[1].SetActive(false);
             greenGlasses.SetActive(false);
             isGreenGActive = false;
         }
     }
-    public void RedButtonFunc()
+    public void RedGlassesFunc()
     {
         if (!isRedGActive)
         {
-            activeTexts[2].SetActive(true);
             redGlasses.SetActive(true);
             isRedGActive = true;
         }
         else if (isRedGActive)
         {
-            activeTexts[2].SetActive(false);
             redGlasses.SetActive(false);
             isRedGActive = false;
         }

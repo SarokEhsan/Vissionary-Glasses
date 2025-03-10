@@ -9,7 +9,7 @@ public class PauseResume : MonoBehaviour
 {
     public static PauseResume instance;
     public TextMeshProUGUI pauseOrResume;
-    public Button backToMenuButton;
+    public GameObject backToMenuButton;
     public bool isGamePaused = false;
     // Start is called before the first frame update
     void Start()

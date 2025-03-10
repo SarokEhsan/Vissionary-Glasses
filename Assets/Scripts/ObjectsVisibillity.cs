@@ -51,9 +51,4 @@ public class ObjectVisibility : MonoBehaviour
         }
         else { objectDivisions[6].SetActive(false); }
     }
-
-    void Visibile()
-    {
-
-    }
 }
