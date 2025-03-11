@@ -8,6 +8,7 @@ public class GlassButtonHandle : MonoBehaviour
     public GameObject blueGlasses;
     public GameObject greenGlasses;
     public GameObject redGlasses;
+    public GameObject[] GlassesImages = new GameObject[3];
     public bool isBlueGActive = false, isGreenGActive = false, isRedGActive = false;
 
     private void Awake()
@@ -37,11 +38,13 @@ public class GlassButtonHandle : MonoBehaviour
     {
         if (!isBlueGActive)
         {
+            GlassesImages[0].SetActive(true);
             blueGlasses.SetActive(true);
             isBlueGActive = true;
         }
         else if (isBlueGActive)
         {
+            GlassesImages[0].SetActive(false);
             blueGlasses.SetActive(false);
             isBlueGActive = false;
         }
@@ -50,11 +53,13 @@ public class GlassButtonHandle : MonoBehaviour
     {
         if (!isGreenGActive)
         {
+            GlassesImages[1].SetActive(true);
             greenGlasses.SetActive(true);
             isGreenGActive = true;
         }
         else if (isGreenGActive)
         {
+            GlassesImages[1].SetActive(false);
             greenGlasses.SetActive(false);
             isGreenGActive = false;
         }
@@ -63,11 +68,13 @@ public class GlassButtonHandle : MonoBehaviour
     {
         if (!isRedGActive)
         {
+            GlassesImages[2].SetActive(true);
             redGlasses.SetActive(true);
             isRedGActive = true;
         }
         else if (isRedGActive)
         {
+            GlassesImages[2].SetActive(false);
             redGlasses.SetActive(false);
             isRedGActive = false;
         }

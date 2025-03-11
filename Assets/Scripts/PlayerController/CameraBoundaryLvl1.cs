@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class CameraBoundaryLvl1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +17,7 @@ public class CameraBoundaryLvl1 : MonoBehaviour
 
     void XBound()
     {
-        float maxXBound = 4.5f;
+        float maxXBound = 2.0f;
         if (transform.position.x < -maxXBound)
         {
             transform.position = new Vector3(-maxXBound, transform.position.y, transform.position.z);
@@ -36,7 +30,7 @@ public class CameraBoundaryLvl1 : MonoBehaviour
 
     void YBound()
     {
-        float maxYBound = 4.0f, minYBound = 0.5f;
+        float maxYBound = 2.0f, minYBound = 2.0f;
         if (transform.position.y < minYBound)
         {
             transform.position = new Vector3(transform.position.x, minYBound, transform.position.z);
@@ -49,7 +43,7 @@ public class CameraBoundaryLvl1 : MonoBehaviour
 
     void ZBound()
     {
-        float maxZBound = 4.5f;
+        float maxZBound = 2.0f;
         if (transform.position.z < -maxZBound)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -maxZBound);

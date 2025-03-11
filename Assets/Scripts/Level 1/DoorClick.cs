@@ -24,10 +24,12 @@ public class DoorClick : MonoBehaviour
                 {
                     DoorFunc();
                 }
-                if (hit.transform.gameObject.tag == "Glasses")
+                if (hit.transform.gameObject.name == "Desk")
                 {
-                    RayCollide();
+                    GameObject.Find("Desk Con").transform.Translate(Vector3.left * 0.28f, Space.World);
+                    //hit.transform.gameObject.transform.Translate(Vector3.left * 0.28f, Space.World);
                 }
+                Debug.Log(hit.transform.gameObject.name);
             }
         }
     }
@@ -36,17 +38,5 @@ public class DoorClick : MonoBehaviour
     {
         PauseResume.instance.isGamePaused = true;
         passwordInput.gameObject.SetActive(true);
-    }
-
-    void RayCollide()
-    {
-        rayCollide.gameObject.SetActive(true);
-        StartCoroutine(rayCollideRoutine());
-    }
-
-    IEnumerator rayCollideRoutine()
-    {
-        yield return new WaitForSeconds(1.5f);
-        rayCollide.gameObject.SetActive(false);
     }
 }
