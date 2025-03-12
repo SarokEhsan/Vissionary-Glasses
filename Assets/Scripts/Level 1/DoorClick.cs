@@ -6,7 +6,6 @@ using UnityEngine;
 public class DoorClick : MonoBehaviour
 {
     public TMP_InputField passwordInput;
-    public TextMeshProUGUI rayCollide;
     // Update is called once per frame
     void Update()
     {
